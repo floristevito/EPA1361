@@ -40,8 +40,7 @@ def get_network(plann_steps_max=10):
     # Upload room for the river projects:
     steps = np.array(range(plann_steps_max))
     
-    projects = pd.read_excel('./data/rfr_strategies.xlsx', index_col=0,
-                            names=['project name', 0,1,2,3,4])
+    projects = pd.read_excel('./data/rfr_strategies.xlsx', index_col=0, usecols = [0,1,2,3,4,5], names=['project name', 0,1,2,3,4])
     
     for n in steps:
         a = to_dict_dropna(projects)
