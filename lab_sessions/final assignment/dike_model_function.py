@@ -119,6 +119,7 @@ class DikeNetwork(object):
         G = self.G
         Qpeaks = self.Qpeaks
         dikelist = self.dikelist
+        waterlevelmin = 100000
 
         # Call RfR initialization:
         self._initialize_rfr_ooi(G, dikelist, self.planning_steps)
@@ -185,6 +186,7 @@ class DikeNetwork(object):
                     # occurs
                     node['critWL'] = Lookuplin(node['fnew {}'.format(s)], 1, 0, node['pfail'])
 
+
                 # Run the simulation:
                 # Run over the discharge wave:
                 for t in range(1, len(time)):
@@ -209,6 +211,11 @@ class DikeNetwork(object):
                             # Transform Q in water levels:
                             node['wl'][t] = Lookuplin(
                                             node['rnew'], 0, 1, node['Qin'][t])
+                            
+                            
+                            if node['wl'][t] != np.nan:
+                                waterlevelmin = min(node['wl'][t], waterlevelmin)
+                            
 
                             # Evaluate failure and, in case, Q in the floodplain and
                             # Q left in the river:
@@ -231,10 +238,12 @@ class DikeNetwork(object):
 
                             Area = Lookuplin(node['table'], 4, 0, node['wl'][t])
                             node['hbas'][t] = node['cumVol'][t] / float(Area)
-
+                            
+                            
                         elif node['type'] == 'downstream':
                             node['Qin'] = G.nodes[dikelist[n - 1]]['Qout']
 
+                
                 # Iterate over the network and store outcomes of interest for a
                 # given event
                 for dike in self.dikelist:
@@ -286,7 +295,9 @@ class DikeNetwork(object):
             data.update({'RfR Total Costs {}'.format(s): G.nodes[
                                 'RfR_projects {}'.format(s)]['cost'.format(s)]})
             data.update({'Expected Evacuation Costs {}'.format(s): np.sum(EECosts)})
-
+            
+            data.update({'Minimum water level full network':waterlevelmin})
+            
         return data
 
 

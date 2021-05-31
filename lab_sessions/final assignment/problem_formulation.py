@@ -12,7 +12,6 @@ from dike_model_function import DikeNetwork  # @UnresolvedImport
 def sum_over(*args):
     return sum(args)
 
-
 def get_model_for_problem_formulation(problem_formulation_id):
     ''' Prepare DikeNetwork in a way it can be input in the EMA-workbench.
     Specify uncertainties, levers and problem formulation.
@@ -187,8 +186,11 @@ def get_model_for_problem_formulation(problem_formulation_id):
 
                 ScalarOutcome('Expected Number of Deaths',
                           variable_name=[var for var in variable_names____],
-                          function=sum_over, kind=direction)]
-
+                          function=sum_over, kind=direction),
+                
+                ScalarOutcome('Minimum water level full network',
+                          variable_name='Minimum water level full network',
+                          kind=ScalarOutcome.MAXIMIZE)]
     # Disaggregate over locations:
     elif problem_formulation_id == 3:
         outcomes = []
