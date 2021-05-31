@@ -170,15 +170,15 @@ def get_model_for_problem_formulation(problem_formulation_id):
         dike_model.outcomes = [
                     ScalarOutcome('Expected Annual Damage',
                           variable_name=[var for var in variable_names],
-                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**7)),
 
                 ScalarOutcome('Dike Investment Costs',
                           variable_name=[var for var in variable_names_],
-                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**9)),
 
                 ScalarOutcome('RfR Investment Costs',
                           variable_name=[var for var in variable_names__],
-                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**11)),
                 
                 ScalarOutcome('Evacuation Costs',
                           variable_name=[var for var in variable_names___],
