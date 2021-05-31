@@ -170,27 +170,27 @@ def get_model_for_problem_formulation(problem_formulation_id):
         dike_model.outcomes = [
                     ScalarOutcome('Expected Annual Damage',
                           variable_name=[var for var in variable_names],
-                          function=sum_over, kind=direction),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
 
                 ScalarOutcome('Dike Investment Costs',
                           variable_name=[var for var in variable_names_],
-                          function=sum_over, kind=direction),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
 
                 ScalarOutcome('RfR Investment Costs',
                           variable_name=[var for var in variable_names__],
-                          function=sum_over, kind=direction),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
                 
                 ScalarOutcome('Evacuation Costs',
                           variable_name=[var for var in variable_names___],
-                          function=sum_over, kind=direction),
+                          function=sum_over, kind=direction, expected_range=(0,10*10**6)),
 
                 ScalarOutcome('Expected Number of Deaths',
                           variable_name=[var for var in variable_names____],
-                          function=sum_over, kind=direction),
+                          function=sum_over, kind=direction, expected_range=(0,100)),
                 
                 ScalarOutcome('Minimum water level full network',
                           variable_name='Minimum water level full network',
-                          kind=ScalarOutcome.MAXIMIZE)]
+                          kind=ScalarOutcome.MAXIMIZE, expected_range=(0,10))]
     # Disaggregate over locations:
     elif problem_formulation_id == 3:
         outcomes = []
