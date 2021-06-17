@@ -74,8 +74,14 @@ Output: ANALYSIS_results/04_sobol_results.tar.gz
 
 Run robustness analysis
 
-input:
-output:
+input: ANALYSIS_results/03_robust_results.tar.gz
+output: none
 
 
 
+## robustness_functions.ipynb
+
+Jupyter Notebook with robustness functions:
+-
+-
+-
