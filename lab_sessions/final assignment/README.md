@@ -9,9 +9,8 @@ ANAlYSIS_03_MORO.ipynb
 ANALYSIS_04_SOBOL.ipynb
 ANALYSIS_05_robustness.ipynb
 
-## outputs
+## (intermediate) outputs
 (intermediate) Results are stored in the folder ANALYSIS_results with corresponding labels to the notebook they have been generated in.
-
 
 ## adjustments to the model
 For the analysis the original room for the river model (https://github.com/quaquel/epa1361_open) has been used with a single adjustment.
@@ -78,10 +77,14 @@ input: ANALYSIS_results/03_robust_results.tar.gz
 output: none
 
 
-
 ## robustness_functions.ipynb
 
-Jupyter Notebook with robustness functions:
--
--
--
+Jupyter Notebook with robustness calculation functions to use in a further analysis:
+- Hurwitz
+- Mean Variance
+- Quartile Skewedness
+
+Input: none
+Output: none
+
+
