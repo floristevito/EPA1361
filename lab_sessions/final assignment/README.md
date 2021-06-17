@@ -1,13 +1,45 @@
 # EPA-simmodel
 
+
+## Files
+
 The room for the river project model is included. For the analysis steps 6 jupyter notebooks have been used
 
+### Analysis
 ANALYSIS_00_problem_formulations.ipynb
 ANALYSIS_01_scenario_discoveryipynb
 ANALYSIS_02_PRIM.ipynb
 ANAlYSIS_03_MORO.ipynb
 ANALYSIS_04_SOBOL.ipynb
-ANALYSIS_05_robustness.ipynb
+ANALYSIS_05_Robust_visualisation.ipynb
+
+### RfR model
+
+These files make the RfR model. All files are original except for problem formulation where water level is added as an output.
+
+_init_.py
+dike_model_function.py
+dike_model_optimization.py
+dike_model_simulation.py
+funs_dikes.py
+funs_economy.py
+funs_generate_network.py
+funs_hydrostat.py
+problem_formulation.py
+Problem Formulations.ipynb
+
+
+## Folders
+
+- ANALYSIS_results:
+    - Contains (intermediate) outputs from the different analyses
+- data:
+    - Contains data used in the RfR model
+- deprecated:
+    - Contains old (outdated) fiels that are not being used anymore
+- figures:
+    - Contains saved visualisations generated in the diffent analysis steps.
+
 
 ## (intermediate) outputs
 (intermediate) Results are stored in the folder ANALYSIS_results with corresponding labels to the notebook they have been generated in.
