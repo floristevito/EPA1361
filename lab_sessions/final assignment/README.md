@@ -1,5 +1,13 @@
-# EPA-simmodel
+# EPA1361-simmodel
 
+
+Authors: 
+Jonathan Ambrose –5266343
+Floris Boendermaker -4655605
+Bram Boereboom -4556232
+Bruno Hermans -4690435
+Anna Noteboom -4564979
+Stephan Olde -4288548
 
 ## Files
 
