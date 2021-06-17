@@ -71,20 +71,13 @@ Output: ANALYSIS_results/04_sobol_results.tar.gz
 
 ## ANALYSIS_05_robustness.ipynb
 
-Run robustness analysis
-
-input: ANALYSIS_results/03_robust_results.tar.gz
-output: none
-
-
-## robustness_functions.ipynb
-
 Jupyter Notebook with robustness calculation functions to use in a further analysis:
 - Hurwitz
 - Mean Variance
 - Quartile Skewedness
 
-Input: none
-Output: none
+input: ANALYSIS_results/03_robust_results.tar.gz
+output: none
+
 
 
