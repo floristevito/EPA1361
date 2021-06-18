@@ -14,6 +14,10 @@ Stephan Olde -4288548
 The room for the river project model is included. For the analysis steps 6 jupyter notebooks have been used
 
 ### Analysis
+
+The analysis should be run in chronological order. 
+Intermediate files can be loaded to skip simulation parts and just do visualisation.
+
 ANALYSIS_00_problem_formulations.ipynb
 ANALYSIS_01_scenario_discoveryipynb
 ANALYSIS_02_PRIM.ipynb
@@ -40,7 +44,14 @@ Problem Formulations.ipynb
 ## Folders
 
 - ANALYSIS_results:
-    - Contains (intermediate) outputs from the different analyses
+    - Contains (intermediate) outputs from the different analyses. The numbers match the file in which the files were created.
+    
+        - 01_model_run.tar.gz
+        - 02_PRIM_scenarios.txt
+        - 03_MORO_convergence.csv
+        - 03_MORO_results.csv
+        - 03_robust_results.tar.gz
+        - 04_sobol_results.tar.gz
 - data:
     - Contains data used in the RfR model
 - deprecated:
